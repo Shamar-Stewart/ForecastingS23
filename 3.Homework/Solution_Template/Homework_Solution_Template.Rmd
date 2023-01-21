@@ -1,0 +1,80 @@
+---
+title: 'Applied Economic Forecasting'
+author: "Homework Solution Sample Template"
+output: pdf_document
+header-includes:
+ \usepackage{float} # Fixes position of graphs
+ 
+geometry: margin=0.8in #sets the page margin as 0.8in all around
+---
+
+```{r setup, include=FALSE}
+# I will use this chunk to 
+ # - set the libraries necessary to execute the exercises below
+ # - default options of my code chunks, graphs, etc.
+library(fpp3)
+theme_set(theme_bw()) #set the default for all graphs in the pdf
+knitr::opts_chunk$set(echo = TRUE, fig.pos = 'H') 
+#produces codes and fixes the position of my graphs 
+```
+
+This template will provide a guide of what I anticipate that your homework solutions will look like. However, please feel free to exercise your creativity when producing your solutions. 
+
+1. Unless stated, please display the R chunk that produced your results.
+
+2. Please ensure you do a quick spell check of your document. Press **F7** on your keyboard.
+
+3. All tables, graphs, and figures must be accompanied by an appropriate title. Graph axes must be labeled, where appropriate.
+
+- **Whenever appropriate, please try to refer to the output.** Please take a look at the `.Rmd` file in this template to see how I am able to:
+
+i. Add captions to my plots, 
+ii. hyperlink and reference the plots automatically, and
+iii. embed the results of variables computed and stored in the R chunks into my text. Gone are the days when you have to memorize the result and then type it over in your word document. Once you have it stored as a variable, you can directly extract it in the document text.
+
+# Question 1: Generating random variables
+
+i. Generate a random normal variable, `x1`, that has 100 observations, a mean of 5, and standard deviation of 5. That is $x1\sim N(5,5^2)$. 
+
+- Use a seed of 01212023. 
+- make `x1` a `tsibble` object (`x1.ts`). Assume that `x1.ts` represents *quarterly* values up to and including December 2021. **It might prove helpful to first declare as a `ts` object then use the `as_tibble` function.**
+- Using the `autoplot` function, plot `x1.ts`. 
+
+```{r x1plots, fig.align="center", fig.height= 3, fig.cap= "Caption of Plot"} 
+
+set.seed(01212023)
+x1 <- rnorm(100, mean = 5, sd = 5)
+x1.ts <- x1 %>% ts(end = c(2021,12), frequency = 4) %>% as_tsibble()
+x1.ts %>% autoplot(value, col = "green4") + 
+  labs(title = "Plot of x1", x = NULL , y = NULL)
+```
+ 
+ii. Do you notice any discernible patterns (think trend, cycle, seasonality) in the plot?
+
+**The observations of x1 in Figure \ref{fig:x1plots} appear to be random with no discernible pattern.**
+
+iii. How do the sample mean and standard deviation compare to the population (true) values?
+
+```{r}
+meanx1 <- round(mean(x1),3)
+cat("The sample mean is:", meanx1, "\n")
+
+stdx1 <- round(sd(x1),3)
+cat("The sample standard deviation is:", stdx1, "\n")
+```
+
+**The random draw of 100 observations has a mean of `r meanx1` and a standard deviation of `r stdx1`. These are not too far off from their respective population values of 5 and 5, respectively.**
+
+\newpage
+
+# Question 2: White Noise
+
+i. Plot the `ACF` of this series and comment on your observations.
+```{r x1acf, fig.align="center", fig.cap= "ACF Plot of X1"} 
+x1.ts %>% ACF(value, lag_max = 24) %>% 
+  autoplot() + 
+  labs(title = "ACF Plot of x1") 
+```
+
+**From the plots in Figure \ref{fig:x1acf}, all the autocorrelation statistics are within the 95% significance bands. Therefore, we can conclude that the series, `x1`,  is not distinguishable/different from a white noise process.**
+
