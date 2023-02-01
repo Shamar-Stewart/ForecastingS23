@@ -1,0 +1,95 @@
+---
+title: 'AAEC 4484/ STAT(AAEC) 5484: Applied Economic Forecasting'
+author: "Your Name Here"
+date: |
+    Homework #2 - Spring `r format(Sys.Date(),"%Y")` 
+output: 
+  pdf_document:
+    keep_tex: no
+
+header-includes:
+ \usepackage{float} #fixes position of figures
+geometry: margin=0.8in # sets the page margins
+---
+
+```{r setup, include=FALSE}
+library(fpp3)
+theme_set(theme_light()) # change if you would like.
+knitr::opts_chunk$set(echo=TRUE, fig.pos = 'H', message=FALSE, warning = FALSE)
+```
+
+The purpose of this assignment is to enhance your understanding of time series and data patterns. It is intended to be rather straightforward and simple.
+
+**Instructions**: 
+
+- **Where necessary, please ensure that your graphs and visuals have proper titles and axes labels.** 
+- Recall that you can use `help()` or `?seriesname` **in your consoles** to get a general overview of the dataset. 
+
+## Question 1: Basic Visualization of Time Series Data
+
+i. Create time plots of the following time series: `Bricks` from `aus_production`, `Hare` from `pelt`, Closing prices for `AMZN` from `gafa_stock`, `Demand` from `vic_elec`. 
+
+- Please use the `grid.arrange` function from the `gridExtra` package to arrange your plots as a `2 x 2` grid. 
+
+
+
+ii. Briefly discuss any discernible pattern(s) you might have noticed in the data.
+
+\newpage 
+
+# Question 2: Assessing (Potential) Seasonality
+
+A cool feature of `R` is the ability to draw a "random" sample of your data. In the code chunk that follows, we will pull a random draw of the `aus_retail` data set by selecting a `Series ID` according to our seed. You will need to change the seed to ensure that we both get a different draw of the data.
+
+```{r}
+set.seed(12345678) #Change this to your preferred seed
+myseries <- aus_retail %>%
+  filter(`Series ID` == sample(aus_retail$`Series ID`,1))
+```
+
+i. Use the `autoplot()`, `gg_season()`, `gg_subseries()`, and `ACF() %>% autoplot()` functions to explore possible seasonality in your chosen time series.
+
+- Please use the `grid.arrange()` function from the `gridExtra` package to arrange your plots. **You are free to organize them however you wish.**
+
+- **It might be useful to change the `lag_max` (how about to 3 years of data?) in the ACF to ensure that you can see a fair bit of the pattern in the correlogram.** 
+
+
+
+ii. What can you say about the series? Are there any seasonal patterns? Trends?
+
+
+\newpage
+
+# Question 3: White Noise
+
+The `aus_livestock` series contains data on monthly "Meat production in Australia for human consumption". 
+
+i. Using the `filter()` function, extract the number of pigs slaughtered between 1990 & 1999, inclusively. Store this variable as `pigs`. **Along with other necessary conditions, I would like to see you use the `year()` and `%in%` commands to extract the relevant time periods.** 
+
+ii. Produce the `autoplot()` of this series and its correlogram. **Comment on any pattern noticed in both.** Does this series look like white noise?
+
+
+
+ii. Now, using the `difference()` and `mutate()` functions, create a new column, `diff` that computes the quarterly changes (`lag = 1`) in your `pigs` series. Store this new data as `d.pigs`. *I would suggest using the head() command on your `d.pigs` series in the console to ensure that the `diff` column looks as you would expect.*
+
+```{r, eval=FALSE} 
+#Remember to remove eval = FALSE to ensure your code runs.
+#This code should get you started
+_____ <- _____ %>% _____(_____ = difference(_____, lag = 1))
+```
+
+iii. Produce an `autoplot()` of `diff` along with the associated correlogram. Does the first differenced data now look like white noise? Did differencing remove any potential seasonality in the data? 
+**Recall that a simple yes will not suffice. You will need to explain your conclusion.**
+
+
+
+iv. Return to the `pigs` series and again, use the `difference()` and `mutate()` functions, to create a new column called `diff12` that computes the quarterly changes (`lag = 12`) in your `pigs` series. Store this new data as `d12.pigs`. *I would suggest using the `head(n = 14)` command on your `d12.pigs` series in the console to ensure that the `diff12` column looks as you would expect.*
+
+
+
+v. Produce an `autoplot` of `diff12` along with the associated correlogram. 
+
+a. Does the data, differenced at the monthly frequency, now look like white noise? **Recall that a simple yes will not suffice. You will need to explain your conclusion.**
+b. Did differencing remove any potential seasonality or trend in the data? If not, can you think of a way that you would solve this? **You are not required to do this. Just an intelligent answer based on the plots will suffice.**
+
+
