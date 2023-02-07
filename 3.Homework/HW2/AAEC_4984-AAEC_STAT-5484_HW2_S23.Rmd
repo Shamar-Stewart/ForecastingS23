@@ -64,13 +64,13 @@ ii. What can you say about the series? Are there any seasonal patterns? Trends?
 
 The `aus_livestock` series contains data on monthly "Meat production in Australia for human consumption". 
 
-i. Using the `filter()` function, extract the number of pigs slaughtered between 1990 & 1999, inclusively. Store this variable as `pigs`. **Along with other necessary conditions, I would like to see you use the `year()` and `%in%` commands to extract the relevant time periods.** 
+i. Using the `filter()` function, extract the number of pigs slaughtered in **Victoria** between 1990 & 1999, inclusively. Store this variable as `pigs`. **Along with other necessary conditions, I would like to see you use the `year()` and `%in%` commands to extract the relevant time periods.** 
 
 ii. Produce the `autoplot()` of this series and its correlogram. **Comment on any pattern noticed in both.** Does this series look like white noise?
 
 
 
-ii. Now, using the `difference()` and `mutate()` functions, create a new column, `diff` that computes the quarterly changes (`lag = 1`) in your `pigs` series. Store this new data as `d.pigs`. *I would suggest using the head() command on your `d.pigs` series in the console to ensure that the `diff` column looks as you would expect.*
+ii. Now, using the `difference()` and `mutate()` functions, create a new column, `diff` that computes the **month-to-month** changes (`lag = 1`) in your `pigs` series. Store this new data as `d.pigs`. *I would suggest using the head() command on your `d.pigs` series in the console to ensure that the `diff` column looks as you would expect.*
 
 ```{r, eval=FALSE} 
 #Remember to remove eval = FALSE to ensure your code runs.
@@ -83,13 +83,13 @@ iii. Produce an `autoplot()` of `diff` along with the associated correlogram. Do
 
 
 
-iv. Return to the `pigs` series and again, use the `difference()` and `mutate()` functions, to create a new column called `diff12` that computes the quarterly changes (`lag = 12`) in your `pigs` series. Store this new data as `d12.pigs`. *I would suggest using the `head(n = 14)` command on your `d12.pigs` series in the console to ensure that the `diff12` column looks as you would expect.*
+iv. Return to the `pigs` series and again, use the `difference()` and `mutate()` functions, to create a new column called `diff12` that computes the **year-on-year** changes (`lag = 12`) in your `pigs` series. Store this new data as `d12.pigs`. *I would suggest using the `head(n = 14)` command on your `d12.pigs` series in the console to ensure that the `diff12` column looks as you would expect.*
 
 
 
 v. Produce an `autoplot` of `diff12` along with the associated correlogram. 
 
-a. Does the data, differenced at the monthly frequency, now look like white noise? **Recall that a simple yes will not suffice. You will need to explain your conclusion.**
+a. Does the data, differenced **with lags at the data frequency**, now look like white noise? **Recall that a simple yes will not suffice. You will need to explain your conclusion.**
 b. Did differencing remove any potential seasonality or trend in the data? If not, can you think of a way that you would solve this? **You are not required to do this. Just an intelligent answer based on the plots will suffice.**
 
 
