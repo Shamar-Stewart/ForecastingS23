@@ -7,7 +7,7 @@ This is the landing page for Applied Economic Forecasting - Spring 2023. Periodi
 |     	  | [Introduction to R](https://htmlpreview.github.io/?https://github.com/Shamar-Stewart/ForecastingS23/blob/main/2.Lectures/Lecture1/R_Introduction.nb.html) | [HW Solution Template (.Rmd)](3.Homework/Solution_Template/Homework_Solution_Template.Rmd) 					|
 |     	  | [Introduction to RMarkdown](https://htmlpreview.github.io/?https://github.com/Shamar-Stewart/ForecastingS23/blob/main/2.Lectures/Lecture1/RMarkdown_Intro.html)                   | 					|
 | 2    	  | [Exploring & Visualizing Time Series](2.Lectures/Lecture2/2-Visualizing-Time-Series.pdf)     	                    | [HW 2 Due: Feb 10, 2023 (.RMD)](3.Homework/HW2/AAEC_4984-AAEC_STAT-5484_HW2_S23.Rmd)<br>[HW#2 PDF Version](3.Homework/HW2/AAEC_4984-AAEC_STAT-5484_HW2_S23.pdf)		</br>			|
-| 3   	  | [Basic Forecasting Models](2.Lectures/Lecture3/3.Evaluation_of_Basic_Forecasting_Models.pdf)                	                    | 					|
+| 3   	  | [Basic Forecasting Models](2.Lectures/Lecture3/3.Evaluation_of_Basic_Forecasting_Models.pdf)                	                    | [HW 3 Due: Feb 22, 2023 (.RMD)](3.Homework/HW3/Homework3_S2023.Rmd)	<br>[HW#3 PDF Version](3.Homework/HW3/Homework3_S2023.pdf)		</br>					|
 | 4    	  | Linear & Dynamic Time Series Regressions                      | 					|
 |      	  | **Exam 1 -- March 13**              	                        | 					|
 |     	  | **SPRING BREAK**                    	                        | 					|
