@@ -8,7 +8,7 @@ This is the landing page for Applied Economic Forecasting - Spring 2023. Periodi
 |     	  | [Introduction to RMarkdown](https://htmlpreview.github.io/?https://github.com/Shamar-Stewart/ForecastingS23/blob/main/2.Lectures/Lecture1/RMarkdown_Intro.html)                   | 					|
 | 2    	  | [Exploring & Visualizing Time Series](2.Lectures/Lecture2/2-Visualizing-Time-Series.pdf)     	                    | [HW 2 Due: Feb 10, 2023 (.RMD)](3.Homework/HW2/AAEC_4984-AAEC_STAT-5484_HW2_S23.Rmd)<br>[HW#2 PDF Version](3.Homework/HW2/AAEC_4984-AAEC_STAT-5484_HW2_S23.pdf)		</br>			|
 | 3   	  | [Basic Forecasting Models](2.Lectures/Lecture3/3.Evaluation_of_Basic_Forecasting_Models.pdf)                	                    | [HW 3 Due: Feb 22, 2023 (.RMD)](3.Homework/HW3/Homework3_S2023.Rmd)	<br>[HW#3 PDF Version](3.Homework/HW3/Homework3_S2023.pdf)		</br>					|
-| 4    	  | [Linear ~& Dynamic~ Time Series Regressions](2.Lectures/Lecture4/4.Linear_and_Dynamic_Time_Series_Regressions.pdf)                       | 					|
+| 4    	  | [Linear ~& Dynamic~ Time Series Regressions](2.Lectures/Lecture4/4.Linear_and_Dynamic_Time_Series_Regressions.pdf)                       | [HW 4 Due: March 20, 2023 (.RMD)](3.Homework/HW4/Homework4_S2023.Rmd)	<br>[HW#4 PDF Version](3.Homework/HW4/Homework4_S2023.pdf)		</br>						|
 |      	  | **Exam 1 -- March 13**              	                        | 					|
 |     	  | **SPRING BREAK**                    	                        | 					|
 | 5   	  | Time Series Decompositions               	                    | 					|
