@@ -11,7 +11,7 @@ This is the landing page for Applied Economic Forecasting - Spring 2023. Periodi
 | 4    	  | [Linear ~& Dynamic~ Time Series Regressions](2.Lectures/Lecture4/4.Linear_and_Dynamic_Time_Series_Regressions.pdf)                       | [HW 4 Due: March 20, 2023 (.RMD)](3.Homework/HW4/Homework4_S2023.Rmd)	<br>[HW#4 PDF Version](3.Homework/HW4/Homework4_S2023.pdf)		</br>						|
 |      	  | **Exam 1 -- March 13**              	                        | 					|
 |     	  | **SPRING BREAK**                    	                        | 					|
-| 5   	  | Time Series Decompositions               	                    | 					|
+| 5   	  | [Time Series Decompositions](2.Lectures/Lecture5/5.Time_Series_Decomposition.pdf)               	                    | [In Class R Notebook](https://htmlpreview.github.io/?https://github.com/Shamar-Stewart/ForecastingS23/blob/main/2.Lectures/Lecture5/Manual_Decomposition.nb.html)	<br> HW 5: To Be Posted </br>				|
 | 6   	  | Exponential Smoothing & Moving Averages 	                    | 					|
 | 7   	  | ARIMA Models                            	                    | 					|
 | 8   	  | VAR Models                              	                    | 					|
