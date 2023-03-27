@@ -12,7 +12,7 @@ This is the landing page for Applied Economic Forecasting - Spring 2023. Periodi
 |      	  | **Exam 1 -- March 13**              	                        | 					|
 |     	  | **SPRING BREAK**                    	                        | 					|
 | 5   	  | [Time Series Decompositions](2.Lectures/Lecture5/5.Time_Series_Decomposition.pdf)               	                    | [In Class R Notebook](https://htmlpreview.github.io/?https://github.com/Shamar-Stewart/ForecastingS23/blob/main/2.Lectures/Lecture5/Manual_Decomposition.nb.html)	<br> HW 5: To Be Posted </br>				|
-| 6   	  | [Exponential Smoothing & Moving Averages](2.Lectures/Lecture6/6.Moving_Averages_-_Exponential_Smoothing.pdf) 	                    | 					|
+| 6   	  | [Exponential Smoothing](2.Lectures/Lecture6/6.Moving_Averages_-_Exponential_Smoothing.pdf) 	                    | 					|
 | 7   	  | ARIMA Models                            	                    | 					|
 | 8   	  | VAR Models                              	                    | 					|
 | 9   	  | (G)ARCH Models                          	                    | 					|
