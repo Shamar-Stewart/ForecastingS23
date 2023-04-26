@@ -1,0 +1,129 @@
+---
+title: 'AAEC 4484/ STAT(AAEC) 5484: Applied Economic Forecasting'
+author: __Your Name Here__
+date: |
+    Homework #6 - Spring `r format(Sys.Date(),"%Y")`
+     
+output: pdf_document
+header-includes:
+ \usepackage{float}
+geometry: margin=0.8in
+---
+
+```{r setup, include=FALSE}
+library(fpp3)
+library(quantmod)
+knitr::opts_chunk$set(echo = TRUE, fig.pos = 'H',
+                      warning = FALSE,
+                      fig.height = 3, out.width="\\textwidth") 
+theme_set(theme_light()) #Feel free to change
+theme(legend.pos = "bottom") # Place all legends below graph
+```
+
+**Instructions**: In all cases, please ensure that your graphs and visuals have properly titles and axes labels, where necessary. Refer to the output, whenever appropriate, when discussing the results.  
+
+\textcolor{red}{\textbf{Important: To speed up the grading process, please take the time to tell Gradescope where each of the 3 questions are located in your submission.}}
+
+# Question 1: Forecasting C02 Emissions
+
+Carbon Emissions is an ever-evolving and interesting issue among environmental activists and academics alike. 
+
+(a) Use the `quantmod` package to pull the "Transportation Carbon Dioxide Emissions, All Fuels for United States" (EMISSCO2TOTVTCTOUSA) from FRED and declare as a `tsibble` object **with the appropriate time index**. 
+
+*Hint: You might need to specify the start and end dates in the `ts()` function.*
+
+
+(b) Provide a time-series plot of the data and **comment** on its stationarity. Please conduct a formal unit root test on the data to confirm your expectations. Be thorough and remember to properly conclude. 
+
+
+(c) What would be your explanation for the drop off near the end of your sample?
+
+
+(d) Perform the Box-Jenkins procedure to determine the candidate models for this data. 
+
+- **Be sure to:**
+  - **perform formal unit root testing. You will need to specify the null hypothesis (hypothesis) and corresponding conclusions of the unit root test(s) used.**
+  - **present the AIC and BIC statistics of your candidate model(s) in a tabular form.**
+  - **explain how you arrived at your preferred model.**
+  - **report the diagnostic checks to justify the adequacy of your model. Comment on the Ljung-Box test results and explain your conclusions.**
+
+(e) Using your preferred model, present an `autoplot` of the forecast for the next **5 years**. 
+
+\newpage
+# Question 2: JohnBear Sales Forecasts
+
+You have been given responsibility for JohnBear's sales forecasting. The sales department forwarded data for 115 consecutive months, ending in December 2022. The data is presented in the `JohnBear.csv` file (see the Data folder on GitHub).
+
+Your tasks are to:
+
+1. Read in the data directly from Github into `R` and declare it as a `tsibble` object with the appropriate frequency, date index, etc.
+
+2. Produce a time plot of the series and comment on the patterns. Does there appear to be seasonality? How about a trend? Does it appear to be nonstationary? No formal testing is required here, just a discussion of how you came to this conclusion from the plot.
+
+3. Develop a Seasonal ARIMA model for this data. Be sure to walk the Director of Sales through your model development process and the candidate models considered.
+
+4. Produce a forecast of the Sales value for the next 12 months.
+
+\newpage
+# Q3: Forecasting Deliquency Rates
+
+An interesting series on FRED is the "Delinquency Rate on Loans to Finance Agricultural Production, All Commercial Banks" (DRFAPGACBN). 
+
+You are asked by a local bank (UI TRUST) to forecast the delinquency rate of these future loans but have no guidance beyond that point. You reached out for some guidance and I sent you the outline below and believe it should be good to help with forecasting the delinquency rate. 
+
+1. Pull the `DRFAPGACBN` series from the `FRED` website. Declare as a `tsibble` object with the appropriate date index. Store the `tsibble` object as `delrate`.
+
+
+
+2. Using the `grid.arrange()` function present appropriate graphs to visualize the data and briefly comment on any relevant properties that you deem pertinent. 
+
+- In particular, does there appear to be seasonality and/or a trend? 
+  - If there is seasonality, does it appear to be multiplicative or additive? **Be sure to explain how you can use your graphs to arrive at a conclusion.**
+
+
+
+## Backtesting
+
+**Now, let us back-test a few strategies to see which one would have performed best on past data under our assumption that the patterns observed will continue into the future.**
+
+3. Subset the data into a training set, `delrate.train`, and test set, `delrate.test`. Assign the last 5 years (2018 Q1 -- 2022 Q4) of data to the test set. The remainder will form the training set.
+**Try using the filter_index command to achieve this.**
+
+4. In a single step, use the `model` function to estimate the following models and produce forecasts over the test period. **Recall that the data is observed quarterly.**
+
+  i. A seasonal naive model
+  ii. Holt's Model
+  iii. Holt's Model with a damped trend
+  iv. The Holt-Winter's model (with additive seasonality)
+  v. The Holt-Winter's model with a damped trend
+
+You are only required to store the model forecasts at this point. **You will find it easier (for the questions that follow) to first store the model fits, then conduct and store the forecasts.**
+
+
+5. Present a plot of the model forecasts and the *test data* set. Which model appears to do the best job, visually, at predicting the test data? It is very likely that the "best" model changes over time. It is fine to explain this in your answer. 
+
+**Be sure to turn off your prediction intervals.**
+
+
+6. Which of the four (5) forecasting models provides the better forecast? 
+
+Use the `RMSE`, `MAPE`, and `MAE` to make your **justify** your final determination. You are required to create a table using the `kable` command here. Display your results to 3 decimal places. Last, ensure that your models have proper names.
+
+
+
+7. Conduct a diagnostic test on the model suggested by the `MAPE`. Be sure to comment on whether the residuals appear to be white noise. 
+**For you answers, be sure to discuss the null of the Ljung-Box statistics and your conclusions at the 1% and 5% levels of significance. **
+
+
+## Forecast and Report Findings
+
+8. Write a brief **nontechnical** report to the Manager of UI TRUST reporting your findings. 
+
+- You report would include an explanation of how you arrived at the preferred model but try not to bore them with all the technical details involved.
+
+- Since you have a preferred model, use it on the **full data** to provide forecasts for the next 3 years and potentially frame your discussion around that. What do the 95% Prediction intervals around your estimate look like?
+
+- What does your forecast imply about the delinquency rate on loans to the Ag sector in the next 3 years? Do you expect a(n) decline/increase/remain steady?  
+
+**In the main, this question is free-form and my attempt to have you explaining you model results to a non-scientific audience.**
+
