@@ -14,8 +14,8 @@ This is the landing page for Applied Economic Forecasting - Spring 2023. Periodi
 | 5   	  | [Time Series Decompositions](2.Lectures/Lecture5/5.Time_Series_Decomposition.pdf)               	                    | [In Class R Notebook](https://htmlpreview.github.io/?https://github.com/Shamar-Stewart/ForecastingS23/blob/main/2.Lectures/Lecture5/Manual_Decomposition.nb.html)	<br> [HW 5: Due April 7, 2023 @ 11:59 PM (.RMD)](3.Homework/HW5/Homework5_S2023.Rmd)</br>	[HW#5 PDF version](3.Homework/HW5/Homework5_S2023.pdf)			|
 | 6   	  | [Exponential Smoothing](2.Lectures/Lecture6/6.Moving_Averages_-_Exponential_Smoothing.pdf) 	                    | 					|
 | 7   	  | [ARIMA Models](2.Lectures/Lecture7/7.ARIMA_Models.pdf)                            	                    | [HW 6 Due: May 2, 2023 - 11:59 PM(.RMD)](3.Homework/HW6/Homework6_S2023.Rmd)	<br>[HW#6 PDF Version](3.Homework/HW6/Homework6_S2023.pdf)		</br> 					|
-| 8   	  | VAR Models                              	                    | 					|
+| 8   	  | VAR Models                              	                    | [Term Paper Template](5.Term_Paper_Template)					|
 | 9   	  | (G)ARCH Models                          	                    | 					|
 | 10   	  | Forecast Evaluation & Combination        	                    | 					|
-|      	  | **EXAM 2 - May 1**                  	                        | 					|
+|      	  | **EXAM 2 - May 7**                  	                        | 					|
 
