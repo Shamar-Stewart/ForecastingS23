@@ -1,0 +1,97 @@
+---
+title: "Writing Your Term Paper in RMarkdown"
+thanks: "If you want to add this, otherwise remove this line..."
+author:
+- name: This is Me!
+  affiliation: Agricultural And Applied Economics, Virginia Tech
+
+output: 
+  pdf_document:
+    citation_package: natbib
+    latex_engine: pdflatex
+    template: paper-latex-template.tex
+
+abstract: |
+
+ Ideally, this section should be no more than 150 words:
+  
+    - One or two sentences providing a **basic introduction and background to the problem**. This should not be technical and  understandable to a lay-person.
+    
+    - One or two sentences telling what you did (in terms of the methodology)
+    
+    - One or two sentences summarizing the main result (with the words "**here we show**" or their equivalent).
+    
+    - One or two sentences that indicates the importance of your results. Again, this should not be technical.
+    
+# 3-5 words related to topic. Helps with Google searches, for example    
+keywords: "pandoc, r markdown, knitr" 
+geometry: margin=1in
+mainfont: Helvetica
+fontsize: 11pt
+spacing: onehalf
+bibliography: "Term-paper-references.bib"
+biblio-style: apalike
+---
+
+```{r setup, include = FALSE}
+#Include your packages here
+library(fpp3)
+#Mute the codes in your paper
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
+```
+
+# Introduction & Background
+
+The Wealth of Nations was published March 9, 1776, [see @R-papaja, for further details] during the Scottish Enlightenment and the Scottish Agricultural Revolution[e.g. @R-papaja]. It influenced several authors and economists, such as Karl Marx, as well as governments and organizations, setting the terms for economic debate and discussion for the next century and a half [@R-base; @R-papaja]. For example, Alexander Hamilton was influenced in part by The Wealth of Nations to write his Report on Manufactures, in which he argued against many of Smith's policies. Hamilton based much of this report on the ideas of Jean-Baptiste Colbert, and it was, in part, Colbert's ideas that Smith responded to, and criticized, with The Wealth of Nations.[^1]
+
+[^1]: This is a easy way to add a footnote to this sentence.
+
+@R-base indicates that the Wealth of Nations was the product of seventeen years of notes and earlier works, as well as an observation of conversation among economists of the time concerning economic and societal conditions during the beginning of the Industrial Revolution, and it took Smith some ten years to produce.
+
+
+*Task:*
+
+-   **Add a few citations to your bib file and practice in-text citations. It is easiest to use Google Scholar's citation feature.**
+
+# Methodology
+
+## Model Specification
+
+*Task:*
+
+-   **Insert Some Equations. And use equation referencing.**
+
+# Empirical Results
+
+## Data
+
+**Discuss your data and the relevant data sources here.**[^2]
+
+[^2]: Be sure to indicate your sample period and the frequency of the data.
+
+## Results
+
+**Discuss the results of your paper here**
+
+```{r test}
+mtcars |> ggplot(aes(x = mpg, disp)) +
+  geom_point(aes(col = as.factor(cyl))) +
+  guides(colour = 
+           guide_legend("Cylinder")) +
+  ggtitle("My Plot") + theme_bw()
+```
+
+
+# Conclusion
+
+-   **What do you conclude?**
+-   **What are the implications of your results?**
+    -   **Who would these results matter to and how has/will your paper and results helped them?**
+-   **Are there limitations to your study and/or avenues for future research?**
+
+\newpage
+
+# References
+
+::: {#refs custom-style="Bibliography"}
+:::
